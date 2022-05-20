@@ -4,6 +4,22 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+const input = document.querySelectorAll('media-post');
+
+console.log(input)
+
+console.log("test")
+
+function like(element) {
+  mimicServerCall()
+  .then(() => {
+    document.getElementById(element.id.like).classList.add("activated-heart")})
+  .catch(() => {
+    document.getElementById("modal").classList.remove("hidden")
+  })
+}
+
+input.forEach(element => element.like.addEventListener('click', like(element)))
 
 
 
